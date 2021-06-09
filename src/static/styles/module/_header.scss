@@ -1,0 +1,11 @@
+@include media-breakpoint-down(lg) {
+  .headerFilter{
+    position: absolute;
+    left: 75%;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .headerFilter{
+    position: static;
+  }
+}

@@ -1,0 +1,20 @@
+/* external files.
+========================================================================== */
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import 'external/_external.scss';
+
+/* Base Variable file
+========================================================================== */
+
+@import 'base/_variable.scss';
+@import 'base/_placeholder.scss';
+
+/* FRAMEWORK
+========================================================================== */
+
+@import 'bootstrap/_updateTheme.scss';
+
+/* MODULES - Re-usable site elements.
+========================================================================== */
+
+@import 'module/_header.scss';

@@ -1,0 +1,76 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+
+//Navbar
+
+.navbar{
+  position: relative;
+  background: $sapGreen;
+  padding:  0 30px;
+  height: 77px;
+  font-size: 1.5rem;
+  a{
+    border-bottom: 2px solid transparent;
+    color: #000 ;
+    text-decoration: none;
+    margin: 0;
+    font-weight: bold;
+  }
+  a:hover{
+    border-bottom: 2px solid $whiteThree;
+    transition: border .2s linear;
+  }
+  a:active{
+    color:$sapGreen;
+  }
+}
+.navbar-collapse{
+  justify-content: flex-end;
+}
+.navbar-nav{
+  align-items: center;
+  margin-top:30%;
+}
+.navbar-toggler{
+  border: none;
+}
+.navbar-toggler-icon {
+  background-image: url("./../../img/menu.svg") !important;
+}
+.navbar-collapse.show{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: transparent;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.navbar-brand svg{
+  position: relative;
+  z-index: 2;
+}
+@include media-breakpoint-up(lg) {
+  .navbar{
+    height: 116px;
+    a{
+      margin-right: 46px;
+    }
+  }
+  .navbar-nav{
+    margin: 0;
+  }
+  .navbar-brand svg{
+    width: 147px;
+    height: 56px;
+  }
+  .navbar-collapse{
+    a{
+      color:$whiteThree;
+      font-size: 0.9rem;
+    }
+  }
+}
