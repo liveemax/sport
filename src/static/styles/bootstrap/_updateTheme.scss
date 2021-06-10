@@ -1,8 +1,11 @@
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/navbar";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins";
 
+
+//Variables
+
+$theme-colors: (
+        "primary": $babyPurple,
+        "secondary": $whiteThree,
+);
 
 //Navbar
 
@@ -32,7 +35,7 @@
   margin-top:30%;
 }
 .navbar-toggler{
-  border: none;
+  border: none!important;
   position: absolute;
   right: 5%;
 }
@@ -89,4 +92,37 @@
       font-size: 0.9rem;
     }
   }
+  .navbar-collapse.show{
+    visibility:hidden ;
+  }
 }
+
+//Button
+
+.button{
+  position: relative;
+  background: $sapGreen;
+  height: 77px;
+  font-size: 1.5rem;
+  a{
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    margin: 0;
+    font-weight: bold;
+  }
+  a:hover{
+    border-bottom: 2px solid $whiteThree;
+    transition: border .2s linear;
+  }
+}
+.btn-outline-primary:hover,.btn-outline-secondary:hover{
+  color: lightpink!important;
+}
+
+
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
