@@ -1,0 +1,35 @@
+.jogEmpty{
+  height: $main-height-m;
+  padding-top:25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  button{
+    position: absolute;
+    bottom: 5vh;
+  }
+}
+.jogEmptyText{
+  margin-top: 30px;
+}
+
+@media screen and (max-height: 560px) {
+  .jogEmpty {
+    padding-top: 5%!important;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .jogEmpty{
+    height: $main-height;
+    button{
+      position: absolute;
+      bottom: 10vh;
+    }
+  }
+  .jogEmpty svg{
+    width: 160px;
+    height: 160px;
+  }
+}

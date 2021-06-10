@@ -8,6 +8,7 @@ const LoginIn = () => {
             xmlnsXlink="http://www.w3.org/1999/xlink"
             width="160px"
             height="150px"
+            viewBox="0 0 160 150"
         ><defs>
             <path id="a" d="M.196.073H159.84v149.924H.196z"/>
         </defs>

@@ -1,9 +1,14 @@
+
+//Container
+
 .container{
   max-width: 620px!important;
 }
 
 
+
 //Variables
+
 $theme-colors: (
         "primary": $babyPurple,
         "secondary": $whiteThree,
@@ -14,7 +19,7 @@ $theme-colors: (
 .navbar{
   position: relative;
   background: $sapGreen;
-  height: 77px;
+  height: $header-height-m;
   font-size: 1.5rem;
   a{
     border-bottom: 2px solid transparent;
@@ -69,34 +74,13 @@ $theme-colors: (
 }
 .navbar-brand{
   padding-left: 30px;
+  a{
+    border-bottom: none!important;
+  }
 }
 .navbar-brand svg{
   position: relative;
   z-index: 2;
-}
-@include media-breakpoint-up(lg) {
-  .navbar{
-    height: 116px;
-    a{
-      margin-right: 46px;
-    }
-  }
-  .navbar-nav{
-    margin: 0;
-  }
-  .navbar-brand svg{
-    width: 147px;
-    height: 56px;
-  }
-  .navbar-collapse{
-    a{
-      color:$whiteThree;
-      font-size: 0.9rem;
-    }
-  }
-  .navbar-collapse.show{
-    visibility:hidden ;
-  }
 }
 
 //Button
@@ -121,11 +105,50 @@ $theme-colors: (
   color: lightpink!important;
 }
 
+//Forms
+.form-control{
+  max-width: 72px;
+  border-radius: 10px;
+}
 
 
+
+
+
+
+@include media-breakpoint-up(lg) {
+  //navbar
+  .navbar{
+    height: $header-height;
+    a{
+      margin-right: 46px;
+    }
+  }
+  .navbar-nav{
+    margin: 0;
+  }
+  .navbar-brand svg{
+    width: 147px;
+    height: 56px;
+  }
+  .navbar-collapse{
+    a{
+      color:$whiteThree;
+      font-size: 0.9rem;
+    }
+  }
+  .navbar-collapse.show{
+    visibility:hidden ;
+  }
+  //forms
+  .form-control{
+  max-width: 100px;
+  }
+}
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/navbar";
 @import "node_modules/bootstrap/scss/buttons";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/containers";
+@import "node_modules/bootstrap/scss/forms";

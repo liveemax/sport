@@ -1,7 +1,8 @@
 import React from 'react';
 
-const HeaderFilter = () => {
-    let fill="rgba(0%,0%,0%,0.4)"
+const HeaderFilter = (props) => {
+    const {filterOpen}=props
+    let fill=filterOpen?"rgba(255,255,255,0.7)":"rgba(0%,0%,0%,0.4)"
     let  width="40px"
     let  height="40px"
     return (

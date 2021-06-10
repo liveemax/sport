@@ -8,9 +8,35 @@
 .headerFilter:hover rect{
   stroke: $whiteThree;
 }
+.headerFilter:hover rect{
+  stroke: $whiteThree;
+}
+
+.headerSearch{
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  height:60px;
+  align-items: center;
+  background-color: $white;
+  color: $greyish;
+  span{
+    margin: 0 15px 0 45px ;
+  }
+}
+
 @include media-breakpoint-down(lg) {
   .headerFilter{
     position: absolute;
     right: 15%;
+  }
+  .headerSearch{
+    padding: 0 5px;
+  }
+  .headerSearch span{
+    margin: 0 15px 0 30px ;
+  }
+  .headerSearch span:nth-child(1){
+    margin-left: 0px ;
   }
 }

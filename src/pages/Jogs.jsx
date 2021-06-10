@@ -1,10 +1,11 @@
 import React from 'react';
+import JogsEmpty from "../components/JogsEmpty";
 
 const Jogs = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <JogsEmpty/>
+        </>
     );
 };
 

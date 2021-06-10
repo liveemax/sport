@@ -5,5 +5,11 @@ $greyishTwo: #b0b0b0;
 $sapGreen: #62aa14;
 $babyPurple: #e990f9;
 $greyish: #b0abab;
-$white: #b0abab;
+$white: #eaeaea;
 $appleGreen: #7ed321;
+
+
+$header-height-m: 77px;
+$header-height: 115px;
+$main-height-m: calc(100vh - #{$header-height-m});
+$main-height: calc(100vh - #{$header-height});
