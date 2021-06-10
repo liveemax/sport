@@ -1,7 +1,7 @@
-export function HeaderBrand () {
-    let fill="rgb(100%,100%,100%)"
-    let  width="98px"
-    let  height="37px"
+export function HeaderBrand (props) {
+    const {fill="rgb(100%,100%,100%)"}=props
+    const  width="98px"
+    const  height="37px"
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

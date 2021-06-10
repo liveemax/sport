@@ -1,11 +1,16 @@
+.headerFilter{
+  cursor:pointer;
+  padding-right: 30px;
+}
+.headerFilter:hover path{
+  fill: $whiteThree;
+}
+.headerFilter:hover rect{
+  stroke: $whiteThree;
+}
 @include media-breakpoint-down(lg) {
   .headerFilter{
     position: absolute;
-    left: 75%;
-  }
-}
-@include media-breakpoint-down(sm) {
-  .headerFilter{
-    position: static;
+    right: 15%;
   }
 }

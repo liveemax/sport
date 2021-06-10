@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HeaderFilter = () => {
-    let fill="rgb(100%,100%,100%)"
+    let fill="rgba(0%,0%,0%,0.4)"
     let  width="40px"
     let  height="40px"
     return (

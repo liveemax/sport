@@ -3,6 +3,8 @@ import {Nav, Navbar} from "react-bootstrap";
 import {HeaderBrand} from "./HeaderBrand";
 import {Link} from "react-router-dom";
 import HeaderFilter from "./HeaderFilter";
+import * as path from "./../router/path";
+
 
 const Header = () => {
     return (
@@ -12,10 +14,12 @@ const Header = () => {
                     <HeaderBrand />
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
+                    <HeaderBrand fill={"#62aa14"}/>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Nav>
-                        <Link to="jogs">Jogs</Link>
-                        <Link to="info">Info</Link>
-                        <Link to="contact">Contacts Us</Link>
+                        <Link to={path.Jogs}>Jogs</Link>
+                        <Link to={path.Info}>Info</Link>
+                        <Link to={path.ContactUs}>Contacts Us</Link>
                     </Nav>
                 </Navbar.Collapse>
                 <div className={"headerFilter"}>
