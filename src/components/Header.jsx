@@ -6,18 +6,17 @@ import HeaderSvgFilter from "./HeaderSvgFilter";
 import * as path from "./../router/path";
 import HeaderSearch from "./HeaderSearch";
 import {useDispatch, useSelector} from "react-redux";
-import {root, selectExpanded, selectFilterOpen} from "../state/reducers/rootReducer";
+import {root, selectExpanded, selectFilterOpen,selectIsAuth} from "../state/reducers/rootReducer";
 import * as pathConst from "../router/path";
 
 
 const Header = () => {
     const {expanded,filterOpen,isAuth}=useSelector(root)
     const dispatch=useDispatch()
-    console.log(isAuth)
     return (
         <header>
             <Navbar variant="dark" expand="lg" expanded={expanded}>
-                    <Navbar.Brand>
+                    <Navbar.Brand onClick={() =>dispatch(selectIsAuth(false))}>
                     <Link to={path.Login}>
                         <HeaderSvgBrand/>
                     </Link>
@@ -42,7 +41,7 @@ const Header = () => {
                 }
             </Navbar>
             {filterOpen&&isAuth ? <HeaderSearch/> : null}
-            {isAuth?null:<Redirect to={pathConst.Login}/>}
+            {isAuth?<Redirect to={pathConst.Jogs}/>:<Redirect to={pathConst.Login}/>}
         </header>
     );
 };

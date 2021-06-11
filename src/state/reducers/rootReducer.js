@@ -19,6 +19,8 @@ const rootReducer = createSlice({
             state.jogsAddIsOpen = actions.payload
         },
         selectIsAuth: (state, actions) => {
+            if(!actions.payload&&localStorage.getItem("token"))
+                localStorage.removeItem("token")
             state.isAuth = actions.payload
         },
     }
