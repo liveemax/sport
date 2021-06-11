@@ -1,34 +1,105 @@
-.jogEmpty{
+//Empty
+
+.jogEmpty {
   height: $main-height-m;
-  padding-top:25%;
+  padding-top: 25%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   position: relative;
-  button{
+
+  button {
     position: absolute;
     bottom: 5vh;
   }
 }
-.jogEmptyText{
+
+.jogEmptyText {
   margin-top: 30px;
+}
+
+//Add
+.jogsAdd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 500px;
+  margin: 10vh auto 0;
+  height: 380px;
+  background-color: $appleGreen;
+  border-radius: 35px;
+}
+
+.jogsCross {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  border: none;
+  background: transparent;
+}
+
+.jogsAddItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 25px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.jogsAddText {
+  display: inline-block;
+  width: 220px;
+  margin-right: 16px;
+}
+
+.jogsAddInput {
+  max-width: 240px;
+  height: 30px;
+}
+
+.jogsAddButton {
+  width: 230px;
+  margin-top: 40px;
 }
 
 @media screen and (max-height: 560px) {
   .jogEmpty {
-    padding-top: 5%!important;
+    padding-top: 5% !important;
+  }
+  .jogsAdd {
+    margin: 3vh auto 0;
   }
 }
+
+@include media-breakpoint-up(sm) {
+  .jogsAddText {
+    width: 70px;
+  }
+  .jogsAddItem {
+    flex-direction: row;
+  }
+}
+
 @include media-breakpoint-up(lg) {
-  .jogEmpty{
+  .jogsAddButton {
+    width: 320px;
+  }
+  .jogsAdd {
+    border-radius: 45px;
+  }
+  .jogEmpty {
     height: $main-height;
-    button{
+
+    button {
       position: absolute;
       bottom: 10vh;
     }
   }
-  .jogEmpty svg{
+  .jogEmpty svg {
     width: 160px;
     height: 160px;
   }

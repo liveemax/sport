@@ -12,6 +12,7 @@
 $theme-colors: (
         "primary": $babyPurple,
         "secondary": $whiteThree,
+        "light":$whiteThree
 );
 
 //Navbar
@@ -70,7 +71,7 @@ $theme-colors: (
   position: relative;
   top: 20px;
   right: 0px;
-  background-image: url("./../../img/cross.svg") !important;
+  background-image: url("../../img/cross.svg") !important;
 }
 .navbar-brand{
   padding-left: 30px;
@@ -104,12 +105,10 @@ $theme-colors: (
 .btn-outline-primary:hover,.btn-outline-secondary:hover{
   color: lightpink!important;
 }
-
-//Forms
-.form-control{
-  max-width: 72px;
-  border-radius: 10px;
+.btn-outline-light:hover{
+  color: #000000!important;
 }
+
 
 
 
@@ -139,10 +138,6 @@ $theme-colors: (
   }
   .navbar-collapse.show{
     visibility:hidden ;
-  }
-  //forms
-  .form-control{
-  max-width: 100px;
   }
 }
 @import "node_modules/bootstrap/scss/functions";
