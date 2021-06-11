@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Nav, Navbar} from "react-bootstrap";
-import {HeaderBrand} from "./HeaderBrand";
+import {HeaderSvgBrand} from "./HeaderSvgBrand";
 import {Link} from "react-router-dom";
-import HeaderFilter from "./HeaderFilter";
+import HeaderSvgFilter from "./HeaderSvgFilter";
 import * as path from "./../router/path";
 import HeaderSearch from "./HeaderSearch";
 
@@ -16,11 +16,11 @@ const Header = () => {
             <Navbar variant="dark" expand="lg" expanded={expanded}>
                 <Navbar.Brand>
                     <Link to={path.Login}>
-                        <HeaderBrand/>
+                        <HeaderSvgBrand/>
                     </Link>
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <HeaderBrand fill={"#62aa14"}/>
+                    <HeaderSvgBrand fill={"#62aa14"}/>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)}/>
                     <Nav>
                         <div onClick={() => setExpanded(false)}><Link to={path.Jogs}>Jogs</Link></div>
@@ -29,7 +29,7 @@ const Header = () => {
                     </Nav>
                 </Navbar.Collapse>
                 <div onClick={() => setFilterOpen(!filterOpen)} className={"headerFilter"}>
-                    <HeaderFilter filterOpen={filterOpen}/>
+                    <HeaderSvgFilter filterOpen={filterOpen}/>
                 </div>
                 <Navbar.Toggle onClick={() => setExpanded(!expanded)} aria-controls="basic-navbar-nav"/>
             </Navbar>

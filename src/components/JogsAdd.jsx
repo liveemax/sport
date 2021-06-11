@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import JogsCross from "./JogsCross";
+import JogsSvgCross from "./JogsSvgCross";
 import {FormControl} from "react-bootstrap";
 import {Button} from "react-bootstrap";
 
@@ -9,7 +9,7 @@ const JogsAdd = () => {
     return (
         <div className="jogsAdd">
             <button onClick={()=>{setJogsAddIsOpen(false)}} className="jogsCross">
-                <JogsCross/>
+                <JogsSvgCross/>
             </button>
             <div className="jogsAddItem">
                 <span className="jogsAddText">Distance</span>
@@ -23,7 +23,7 @@ const JogsAdd = () => {
                 <span className="jogsAddText">Date</span>
                 <FormControl className="jogsAddInput"/>
             </div>
-            <Button className="jogsAddButton" variant="outline-light">asdf</Button>
+            <Button className="jogsAddButton" variant="outline-light">Save</Button>
         </div>
     );
 };

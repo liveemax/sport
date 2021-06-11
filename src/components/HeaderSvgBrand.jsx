@@ -1,4 +1,4 @@
-export function HeaderBrand (props) {
+export function HeaderSvgBrand (props) {
     const {fill="rgb(100%,100%,100%)"}=props
     const  width="98px"
     const  height="37px"

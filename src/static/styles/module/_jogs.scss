@@ -34,11 +34,10 @@
 }
 
 .jogsCross {
+  @extend %buttonRestore;
   position: absolute;
   right: 5%;
   top: 5%;
-  border: none;
-  background: transparent;
 }
 
 .jogsAddItem {
@@ -65,6 +64,45 @@
   width: 230px;
   margin-top: 40px;
 }
+.jogsSvgAdd{
+  @extend %buttonRestore;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+//Results
+
+.jogsResultsItem{
+  height: 150px;
+  width: 260px;
+  display: flex;
+  margin: 0 auto;
+}
+.jogsResultsItem{
+  margin-left: -1.5rem;
+  border-bottom: 1px solid $greyish;
+  height: 150px;
+  width: $jogs-item-width;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jogsResultsStatistics{
+  display: flex;
+  margin-left: 46px;
+  justify-content: center;
+  flex-direction: column;
+}
+.jogsResultsStatistics span:first-child{
+  opacity: .5;
+}
+.jogsResultsStatistics span:not(:first-child){
+  font-weight: 500;
+}
+.jogsResultsStatistics span span{
+  opacity: .7;
+}
 
 @media screen and (max-height: 560px) {
   .jogEmpty {
@@ -82,9 +120,18 @@
   .jogsAddItem {
     flex-direction: row;
   }
+  .jogsResultsItem {
+    border-bottom: 0;
+    width: 260px;
+    margin: 0 auto;
+  }
 }
 
 @include media-breakpoint-up(lg) {
+    .jogsSvgAdd{
+    bottom: 45px;
+    right: 45px;
+  }
   .jogsAddButton {
     width: 320px;
   }

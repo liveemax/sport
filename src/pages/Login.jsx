@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginBear from "../components/LoginBear";
+import LoginBear from "../components/LoginSvgBear";
 import {Button} from "react-bootstrap";
 
 const Login = () => {

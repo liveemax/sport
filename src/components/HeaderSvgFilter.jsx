@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderFilter = (props) => {
+const HeaderSvgFilter = (props) => {
     const {filterOpen}=props
     let fill=filterOpen?"rgba(255,255,255,0.7)":"rgba(0%,0%,0%,0.4)"
     let  width="40px"
@@ -21,4 +21,4 @@ const HeaderFilter = (props) => {
     );
 };
 
-export default HeaderFilter;
+export default HeaderSvgFilter;

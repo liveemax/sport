@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JogsSad = () => {
+const JogsSvgSad = () => {
     let fill="#b0b0b0"
     return (
         <svg
@@ -28,4 +28,4 @@ const JogsSad = () => {
     );
 };
 
-export default JogsSad;
+export default JogsSvgSad;

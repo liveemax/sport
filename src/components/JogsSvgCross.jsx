@@ -1,6 +1,6 @@
 import React from 'react';
 
-const JogsCross = () => {
+const JogsSvgCross = () => {
     let fill = "#fff"
     return (
         <svg
@@ -13,4 +13,4 @@ const JogsCross = () => {
     );
 };
 
-export default JogsCross;
+export default JogsSvgCross;
