@@ -1,6 +1,6 @@
 import React from 'react';
 import {publicRoutes} from "./routes";
-import { Switch, Route, Redirect } from "react-router-dom";
+import {Switch, Route, Redirect} from "react-router-dom";
 import * as pathConst from "./path"
 import withContainer from "../HOC/withContainer";
 

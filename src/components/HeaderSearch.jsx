@@ -1,17 +1,18 @@
-import {useState} from "react";
 import {FormControl} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
+import {jogs, selectDataFrom, selectDataTo} from "../state/reducers/jogsReducer";
 
 
 const HeaderSearch = () => {
-    const [dataFrom,setDataFrom]=useState("")
-    const [dataTo,setDataTo]=useState("")
-    const dateFormat="28.12.99"
+    const {dateFrom,dateTo}=useSelector(jogs)
+    const dispatch=useDispatch()
+    const datePlaceholder="28.12.2020"
     return (
         <div className="headerSearch">
-            <span>Date to</span>
-            <FormControl placeholder={dateFormat} onChange={(e)=>{setDataFrom(e.currentTarget.value)}} value={dataFrom}/>
             <span>Date from</span>
-            <FormControl placeholder={dateFormat}  onChange={(e)=>{setDataTo(e.currentTarget.value)}} value={dataTo}/>
+            <FormControl placeholder={datePlaceholder} onChange={(e)=>{dispatch(selectDataFrom(e.currentTarget.value))}} value={dateFrom}/>
+            <span>Date to</span>
+            <FormControl placeholder={datePlaceholder}  onChange={(e)=>{dispatch(selectDataTo(e.currentTarget.value))}} value={dateTo}/>
         </div>
     );
 };

@@ -15,6 +15,11 @@
 .headerSearch{
   .form-control{
     max-width: 100px;
+    font-size: 0.8rem;
+  }
+  .form-control::placeholder{
+    font-size: 0.7rem;
+    opacity: 0.5;
   }
   font-size: 0.8rem;
   display: flex;
