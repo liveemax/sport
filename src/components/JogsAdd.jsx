@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import JogsSvgCross from "./JogsSvgCross";
 import {FormControl} from "react-bootstrap";
 import {Button} from "react-bootstrap";
+import {selectJogsAddIsOpen} from "../state/reducers/rootReducer";
+import {useDispatch} from "react-redux";
 
 const JogsAdd = () => {
-    const [jogsAddIsOpen,setJogsAddIsOpen]=useState(true)
-    console.log(jogsAddIsOpen)
+    const dispatch=useDispatch()
     return (
         <div className="jogsAdd">
-            <button onClick={()=>{setJogsAddIsOpen(false)}} className="jogsCross">
+            <button onClick={()=>{dispatch(selectJogsAddIsOpen(false))}} className="jogsCross">
                 <JogsSvgCross/>
             </button>
             <div className="jogsAddItem">

@@ -6,42 +6,59 @@ import HeaderSvgFilter from "./HeaderSvgFilter";
 import * as path from "./../router/path";
 import HeaderSearch from "./HeaderSearch";
 import {useDispatch, useSelector} from "react-redux";
-import {root, selectExpanded, selectFilterOpen,selectIsAuth} from "../state/reducers/rootReducer";
+import {root, selectExpanded, selectFilterOpen, selectIsAuth, selectJogsAddIsOpen} from "../state/reducers/rootReducer";
 import * as pathConst from "../router/path";
+import {pagination, selectAllPages, selectJogsResults, selectStartPage} from "../state/reducers/paginationReducer";
 
 
 const Header = () => {
-    const {expanded,filterOpen,isAuth}=useSelector(root)
-    const dispatch=useDispatch()
+    const {expanded, filterOpen, isAuth} = useSelector(root)
+    const {allPage} = useSelector(pagination)
+    console.log(isAuth)
+    const dispatch = useDispatch()
     return (
         <header>
             <Navbar variant="dark" expand="lg" expanded={expanded}>
-                    <Navbar.Brand onClick={() =>dispatch(selectIsAuth(false))}>
+                <Navbar.Brand onClick={() => {
+                    dispatch(selectIsAuth(false))
+                    dispatch(selectStartPage(0))
+                    dispatch(selectJogsResults([]))
+                    dispatch(selectAllPages(0))
+                    dispatch(selectExpanded(false))
+                    dispatch(selectFilterOpen(false))
+                    dispatch(selectJogsAddIsOpen(false))
+                }}>
                     <Link to={path.Login}>
                         <HeaderSvgBrand/>
                     </Link>
                 </Navbar.Brand>
-                {isAuth?
+                {isAuth ?
                     <>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <HeaderSvgBrand fill={"#62aa14"}/>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() =>  dispatch(selectExpanded(!expanded))}/>
-                    <Nav>
-                        <div onClick={() => dispatch(selectExpanded(false))}><Link to={path.Jogs}>Jogs</Link></div>
-                        <div onClick={() => dispatch(selectExpanded(false))}><Link to={path.Info}>Info</Link></div>
-                        <div onClick={() => dispatch(selectExpanded(false))}><Link to={path.ContactUs}>Contacts Us</Link></div>
-                    </Nav>
-                </Navbar.Collapse>
-                <div onClick={() => dispatch(selectFilterOpen(!filterOpen))} className={"headerFilter"}>
-                    <HeaderSvgFilter filterOpen={filterOpen}/>
-                </div>
-                <Navbar.Toggle onClick={() => dispatch(selectExpanded(!expanded))} aria-controls="basic-navbar-nav"/>
-                    </>
-                    :null
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <HeaderSvgBrand fill={"#62aa14"}/>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav"
+                                           onClick={() => dispatch(selectExpanded(!expanded))}/>
+                            <Nav>
+                                <div onClick={() => dispatch(selectExpanded(false))}><Link to={path.Jogs}>Jogs</Link>
+                                </div>
+                                <div onClick={() => dispatch(selectExpanded(false))}><Link to={path.Info}>Info</Link>
+                                </div>
+                                <div onClick={() => dispatch(selectExpanded(false))}><Link to={path.ContactUs}>Contacts
+                                    Us</Link></div>
+                            </Nav>
+                        </Navbar.Collapse>
+                        {allPage=== 0 ?
+                            null :
+                            <div onClick={() => dispatch(selectFilterOpen(!filterOpen))} className={"headerFilter"}>
+                                <HeaderSvgFilter filterOpen={filterOpen}/>
+                            </div>}
+                        <Navbar.Toggle onClick={() => dispatch(selectExpanded(!expanded))}
+                                       aria-controls="basic-navbar-nav"/>
+                    </> : null
                 }
             </Navbar>
-            {filterOpen&&isAuth ? <HeaderSearch/> : null}
-            {isAuth?<Redirect to={pathConst.Jogs}/>:<Redirect to={pathConst.Login}/>}
+            {filterOpen && isAuth ? <HeaderSearch/> : null}
+            {isAuth ? <Redirect to={pathConst.Jogs}/> : <Redirect to={pathConst.Login}/>}
         </header>
     );
 };

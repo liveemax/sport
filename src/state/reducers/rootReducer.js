@@ -21,6 +21,8 @@ const rootReducer = createSlice({
         selectIsAuth: (state, actions) => {
             if(!actions.payload&&localStorage.getItem("token"))
                 localStorage.removeItem("token")
+            if(!actions.payload&&localStorage.getItem("jogs"))
+                localStorage.removeItem("jogs")
             state.isAuth = actions.payload
         },
     }

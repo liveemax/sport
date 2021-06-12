@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
+import {selectJogsAddIsOpen} from "../state/reducers/rootReducer";
+import {useDispatch} from "react-redux";
 
 const JogsSvgAdd = () => {
     let fill = "#7ED321"
-    const [jogsAddIsOpen,setJogsAddIsOpen]=useState(false)
-    console.log(jogsAddIsOpen)
+    const dispatch=useDispatch()
     return (
-        <button className="jogsSvgAdd" onClick={()=>{setJogsAddIsOpen(true)}}>
+        <button className="jogsSvgAdd" onClick={()=>{dispatch(selectJogsAddIsOpen(true))}}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"

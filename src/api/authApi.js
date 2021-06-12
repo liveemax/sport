@@ -1,4 +1,4 @@
-import * as apiData from "./apiData";
+import * as apiData from "./commonData";
 
 export const getToken = async () => {
     try {
