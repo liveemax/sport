@@ -1,8 +1,8 @@
 import React from 'react';
 import JogsSvgSad from "./JogsSvgSad";
 import {Button} from "react-bootstrap";
-import {selectJogsAddIsOpen} from "../state/reducers/rootReducer";
 import {useDispatch} from "react-redux";
+import {selectJogsAddIsOpen} from "../state/reducers/jogsAddReducer";
 
 const JogsEmpty = () => {
     const dispatch=useDispatch()

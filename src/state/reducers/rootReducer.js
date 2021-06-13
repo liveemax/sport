@@ -1,12 +1,13 @@
 import {createSlice} from '@reduxjs/toolkit'
+import {jogStorage,tokenStorage} from "../../sportsModule/stateReuse";
+
 
 const rootReducer = createSlice({
     name: 'root',
     initialState: {
         expanded: false,
         filterOpen: false,
-        jogsAddIsOpen: false,
-        isAuth:!!localStorage.getItem("token"),
+        isAuth:!!localStorage.getItem(tokenStorage),
     },
     reducers: {
         selectExpanded: (state, actions) => {
@@ -15,14 +16,11 @@ const rootReducer = createSlice({
         selectFilterOpen: (state, actions) => {
             state.filterOpen = actions.payload
         },
-        selectJogsAddIsOpen: (state, actions) => {
-            state.jogsAddIsOpen = actions.payload
-        },
         selectIsAuth: (state, actions) => {
-            if(!actions.payload&&localStorage.getItem("token"))
-                localStorage.removeItem("token")
-            if(!actions.payload&&localStorage.getItem("jogs"))
-                localStorage.removeItem("jogs")
+            if(!actions.payload&&localStorage.getItem(tokenStorage))
+                localStorage.removeItem(tokenStorage)
+            if(!actions.payload&&localStorage.getItem(jogStorage))
+                localStorage.removeItem(jogStorage)
             state.isAuth = actions.payload
         },
     }
@@ -30,6 +28,6 @@ const rootReducer = createSlice({
 
 export const root = (state) => state.root;
 
-export const {selectExpanded, selectFilterOpen, selectJogsAddIsOpen,selectIsAuth} = rootReducer.actions
+export const {selectExpanded, selectFilterOpen, selectIsAuth} = rootReducer.actions
 
 export default rootReducer.reducer;

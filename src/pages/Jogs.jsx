@@ -3,11 +3,11 @@ import JogsEmpty from "../components/JogsEmpty";
 import JogsAdd from "../components/JogsAdd";
 import JogsResults from "../components/JogsResults";
 import {useSelector} from "react-redux";
-import {root} from "../state/reducers/rootReducer";
-import {jogs} from "../state/reducers/jogsReducer";
+import {jogs} from "../state/reducers/jogsFilterReducer";
+import {jogsAdd} from "../state/reducers/jogsAddReducer";
 
 const Jogs = () => {
-    const {jogsAddIsOpen}=useSelector(root)
+    const {jogsAddIsOpen}=useSelector(jogsAdd)
     const {allPages}=useSelector(jogs)
     return (
         <>

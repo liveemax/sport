@@ -1,13 +1,11 @@
-import * as apiData from "./commonData";
+import * as stateReuse from "../sportsModule/stateReuse";
+import {tokenHeader} from "../sportsModule/stateReuse";
 
 export const getToken = async () => {
     try {
-        let result = await fetch(`${apiData.url}/auth/uuidLogin`, {
+        let result = await fetch(`${stateReuse.url}/auth/uuidLogin`, {
             method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
+            headers: {...tokenHeader()},
             body: "uuid=hello"
         });
         if (result.ok) {

@@ -1,14 +1,14 @@
 import React from 'react';
-import JogsRunner from "./JogsRunner";
+import JogsRunner from "./JogsSvgRunner";
 import moment from "moment";
-import {dateFormat} from "../state/stateReuse";
+import {dateFormat} from "../sportsModule/stateReuse";
 
 const JogsResultsItem = (props) => {
     const {speed,distance,time,date}=props
-    const DD_MM_YYYY=moment(date).format(dateFormat)
+    const DD_MM_YYYY=moment.unix(date).format(dateFormat)
     return (
         <div className="jogsResultsItem">
-            <div>
+            <div className="jogsResultsSvg">
             <JogsRunner/>
             </div>
             <div className="jogsResultsStatistics">

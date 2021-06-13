@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {selectJogsAddIsOpen} from "../state/reducers/rootReducer";
+import React from 'react';
 import {useDispatch} from "react-redux";
+import {selectJogsAddIsOpen} from "../state/reducers/jogsAddReducer";
 
 const JogsSvgAdd = () => {
     let fill = "#7ED321"

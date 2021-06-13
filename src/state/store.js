@@ -2,7 +2,8 @@ import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
 import headerReducer from "./reducers/rootReducer";
 import createSagaMiddleware from 'redux-saga'
 import {rootSaga} from "./middleWare/sagas";
-import jogsReducer from "./reducers/jogsReducer";
+import jogsAddReducer from "./reducers/jogsAddReducer";
+import jogsFilterReducer from "./reducers/jogsFilterReducer";
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -10,7 +11,8 @@ const store = configureStore({
     devTools: process.env.NODE_ENV !== 'production',
     reducer: {
         root: headerReducer,
-        jogs:jogsReducer
+        jogs:jogsFilterReducer,
+        jogsAdd:jogsAddReducer
     },
     middleware: [...getDefaultMiddleware({ thunk: false }), sagaMiddleware]
 });

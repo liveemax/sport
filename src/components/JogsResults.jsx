@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import JogsResultsItem from "./JogsResultsItem";
 import {useDispatch, useSelector} from "react-redux";
 import JogsSvgAdd from "./JogsSvgAdd";
@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import ReactPaginate from 'react-paginate';
 import PaginateItem from "./PaginateItem";
-import {jogs, selectStartPage} from "../state/reducers/jogsReducer";
+import {jogs, selectStartPage} from "../state/reducers/jogsFilterReducer";
 
 const JogsResults = () => {
     const {allPages, startPage, jogsResults, pageSize} = useSelector(jogs)
@@ -18,7 +18,7 @@ const JogsResults = () => {
             {
                 jogsResults.map((el, ind) => {
                     if (ind >= startPage * pageSize && ind < startPage * pageSize + pageSize)
-                            return <JogsResultsItem key={el.id} speed={(el.distance / el.time).toFixed(2)}
+                            return <JogsResultsItem key={el.id} speed={(el.distance / ((el.time)/60)).toFixed(1)}
                                                     distance={el.distance} time={el.time} date={el.date}/>
                 })
             }

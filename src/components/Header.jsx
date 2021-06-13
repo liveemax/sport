@@ -6,15 +6,17 @@ import HeaderSvgFilter from "./HeaderSvgFilter";
 import * as pathConstant from "./../router/path";
 import HeaderSearch from "./HeaderSearch";
 import {useDispatch, useSelector} from "react-redux";
-import {root, selectExpanded, selectFilterOpen, selectIsAuth, selectJogsAddIsOpen} from "../state/reducers/rootReducer";
+import {root, selectExpanded, selectFilterOpen, selectIsAuth} from "../state/reducers/rootReducer";
 import {
     jogs,
     selectAllPages, selectDataFrom,
     selectDataTo,
     selectJogsResults,
     selectStartPage
-} from "../state/reducers/jogsReducer";
+} from "../state/reducers/jogsFilterReducer";
 import {useLocation} from "react-router";
+import {jogStorage} from "../sportsModule/stateReuse"
+import {selectJogsAddIsOpen} from "../state/reducers/jogsAddReducer";
 
 
 
@@ -59,7 +61,7 @@ const Header = () => {
                         {location.pathname===pathConstant.Jogs&&allPages!==0?
                             <div onClick={() => {
                                 dispatch(selectFilterOpen(!filterOpen))
-                                dispatch(selectJogsResults(JSON.parse(localStorage.getItem("jogs"))))
+                                dispatch(selectJogsResults(JSON.parse(localStorage.getItem(jogStorage))))
                                 dispatch(selectDataFrom(""))
                                 dispatch(selectDataTo(""))
                             }} className={"headerFilter"}>

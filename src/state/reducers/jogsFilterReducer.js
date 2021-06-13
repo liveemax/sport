@@ -1,8 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
-import {allPages, filterFunc, localBuffer, pageSize, startPage} from "../stateReuse";
+import {allPages, filterFunc, localBuffer, pageSize, startPage} from "../../sportsModule/stateReuse";
 
 
-const jogsReducer = createSlice({
+const jogsFilterReducer = createSlice({
     name: 'jogs',
     initialState: {
         jogsResults: localBuffer,
@@ -37,6 +37,6 @@ const jogsReducer = createSlice({
 
 export const jogs = (state) => state.jogs;
 
-export const {selectStartPage, selectAllPages,selectJogsResults,selectDataTo,selectDataFrom} = jogsReducer.actions
+export const {selectStartPage, selectAllPages,selectJogsResults,selectDataTo,selectDataFrom} = jogsFilterReducer.actions
 
-export default jogsReducer.reducer;
+export default jogsFilterReducer.reducer;
