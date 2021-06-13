@@ -1,26 +1,31 @@
-.loginRoot{
+.loginRootContainer {
+  height: $main-height-m;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginRoot {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
   max-width: 500px;
   height: 320px;
   border-radius: 44px;
 }
-.loginButton{
+.loginButton {
   margin-top: 60px;
   border-radius: 36px;
 }
 @include media-breakpoint-up(lg) {
-  .loginRoot{
+  .loginRootContainer {
+    height: $main-height;
+  }
+  .loginRoot {
     background-color: $babyPurple;
   }
-  .loginRoot svg path{
+  .loginRoot svg path {
     fill: $whiteThree;
   }
 }

@@ -1,54 +1,53 @@
-
 //Container
 
-.container{
-  max-width: 620px!important;
+.container {
+  max-width: 620px !important;
 }
 
 //Variables
 
 $theme-colors: (
-        "primary": $babyPurple,
-        "secondary": $whiteThree,
-        "light":$whiteThree,
+  "primary": $babyPurple,
+  "secondary": $whiteThree,
+  "light": $whiteThree,
 );
 
 //Navbar
 
-.navbar{
+.navbar {
   position: relative;
   background: $sapGreen;
   height: $header-height-m;
   font-size: 1.5rem;
-  a{
+  a {
     border-bottom: 2px solid transparent;
-    color: #000 ;
+    color: #000;
     text-decoration: none;
     margin: 0;
     font-weight: bold;
   }
-  a:hover{
+  a:hover {
     border-bottom: 2px solid $whiteThree;
-    transition: border .2s linear;
+    transition: border 0.2s linear;
   }
 }
-.navbar-collapse{
+.navbar-collapse {
   justify-content: flex-end;
   transition: none;
 }
-.navbar-nav{
+.navbar-nav {
   align-items: center;
-  margin-top:30%;
+  margin-top: 30%;
 }
-.navbar-toggler{
-  border: none!important;
+.navbar-toggler {
+  border: none !important;
   position: absolute;
   right: 5%;
 }
 .navbar-toggler-icon {
   background-image: url("./../../img/menu.svg") !important;
 }
-.navbar-collapse.show{
+.navbar-collapse.show {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -56,86 +55,81 @@ $theme-colors: (
   left: 0;
   top: -55px;
   z-index: 100;
-  a:active{
-    color:$sapGreen;
+  a:active {
+    color: $sapGreen;
   }
 }
-.navbar-collapse.show svg{
+.navbar-collapse.show svg {
   position: relative;
   left: 30px;
   top: 20px;
 }
-.navbar-collapse.show .navbar-toggler-icon{
+.navbar-collapse.show .navbar-toggler-icon {
   position: relative;
   top: 20px;
   right: 0px;
   background-image: url("../../img/cross.svg") !important;
 }
-.navbar-brand{
+.navbar-brand {
   padding-left: 30px;
-  a{
-    border-bottom: none!important;
+  a {
+    border-bottom: none !important;
   }
 }
-.navbar-brand svg{
+.navbar-brand svg {
   position: relative;
   z-index: 2;
 }
 
 //Button
 
-.button{
+.button {
   position: relative;
   background: $sapGreen;
   height: 77px;
   font-size: 1.5rem;
-  a{
+  a {
     border-bottom: 2px solid transparent;
     text-decoration: none;
     margin: 0;
     font-weight: bold;
   }
-  a:hover{
+  a:hover {
     border-bottom: 2px solid $whiteThree;
-    transition: border .2s linear;
+    transition: border 0.2s linear;
   }
 }
-.btn-outline-primary:hover,.btn-outline-secondary:hover{
-  color: lightpink!important;
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+  color: lightpink !important;
 }
-.btn-outline-light:hover{
-  color: #000000!important;
+.btn-outline-light:hover {
+  color: #000000 !important;
 }
-
-
-
-
-
-
 
 @include media-breakpoint-up(lg) {
   //navbar
-  .navbar{
+  .navbar {
     height: $header-height;
-    a{
+    a {
       margin-right: 46px;
     }
   }
-  .navbar-nav{
+  .navbar-nav {
     margin: 0;
   }
-  .navbar-brand svg{
+  .navbar-brand svg {
     width: 147px;
     height: 56px;
   }
-  .navbar-collapse{
-    a{
-      color:$whiteThree;
+  .navbar-collapse {
+    a {
+      color: $whiteThree;
       font-size: 0.9rem;
     }
   }
-  .navbar-collapse.show{
-    visibility:hidden ;
+  .navbar-collapse.show {
+    visibility: hidden;
   }
 }
 @import "node_modules/bootstrap/scss/functions";

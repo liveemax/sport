@@ -1,54 +1,54 @@
-.headerFilter{
-  cursor:pointer;
+.headerFilter {
+  cursor: pointer;
   padding-right: 30px;
 }
-.headerFilter:hover path{
+.headerFilter:hover path {
   fill: $whiteThree;
 }
-.headerFilter:hover rect{
+.headerFilter:hover rect {
   stroke: $whiteThree;
 }
-.headerFilter:hover rect{
+.headerFilter:hover rect {
   stroke: $whiteThree;
 }
 
-.headerSearch{
-  .form-control{
+.headerSearch {
+  .form-control {
     max-width: 100px;
     font-size: 0.8rem;
   }
-  .form-control::placeholder{
+  .form-control::placeholder {
     font-size: 0.7rem;
     opacity: 0.5;
   }
   font-size: 0.8rem;
   display: flex;
   justify-content: center;
-  height:60px;
+  height: 60px;
   align-items: center;
   background-color: $white;
   color: $greyish;
-  span{
-    margin: 0 15px 0 45px ;
+  span {
+    margin: 0 15px 0 45px;
   }
 }
 
 @include media-breakpoint-down(lg) {
-  .headerFilter{
+  .headerFilter {
     position: absolute;
     right: 15%;
   }
-  .headerSearch{
+  .headerSearch {
     padding: 0 5px;
   }
-  .headerSearch span{
-    margin: 0 15px 0 30px ;
+  .headerSearch span {
+    margin: 0 15px 0 30px;
   }
-  .headerSearch span:nth-child(1){
-    margin-left: 0px ;
+  .headerSearch span:nth-child(1) {
+    margin-left: 0px;
   }
   //forms
-  .headerSearch .form-control{
+  .headerSearch .form-control {
     max-width: 72px;
     border-radius: 10px;
   }

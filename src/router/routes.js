@@ -2,23 +2,23 @@ import Login from "../pages/Login";
 import Info from "../pages/Info";
 import ContactUs from "../pages/ContactUs";
 import Jogs from "../pages/Jogs";
-import * as path from "./path"
+import { sport } from "../module/module";
 
 export const publicRoutes = [
-    {
-        path: path.Login,
-        Component: Login,
-    },
-    {
-        path: path.Jogs,
-        Component: Jogs,
-    },
-    {
-        path: path.Info,
-        Component: Info,
-    },
-    {
-        path: path.ContactUs,
-        Component: ContactUs,
-    }
+  {
+    path: sport.path.login,
+    Component: Login,
+  },
+  {
+    path: sport.path.jogs,
+    Component: Jogs,
+  },
+  {
+    path: sport.path.info,
+    Component: Info,
+  },
+  {
+    path: sport.path.contactUs,
+    Component: ContactUs,
+  },
 ];

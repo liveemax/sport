@@ -1,42 +1,44 @@
-import {createSlice} from '@reduxjs/toolkit'
-import {allPages, filterFunc, localBuffer, pageSize, startPage} from "../../sportsModule/stateReuse";
-
+import { createSlice } from "@reduxjs/toolkit";
+import { sport } from "../../module/module";
 
 const jogsFilterReducer = createSlice({
-    name: 'jogs',
-    initialState: {
-        jogsResults: localBuffer(),
-        startPage,
-        pageSize,
-        allPages:allPages(localBuffer),
-        dateFrom:"",
-        dateTo:"",
+  name: "jogs",
+  initialState: {
+    jogsResults: sport.localBuffer(),
+    startPage: sport.startPage,
+    pageSize: sport.pageSize,
+    allPages: sport.allPages(JSON.parse(localStorage.getItem("jogs"))),
+    dateFrom: "",
+    dateTo: "",
+  },
+  reducers: {
+    selectStartPage: (state, actions) => {
+      state.startPage = actions.payload;
     },
-    reducers: {
-        selectStartPage: (state, actions) => {
-            state.startPage = actions.payload
-        },
-        selectAllPages: (state, actions) => {
-            state.allPages = actions.payload
-        },
-        selectJogsResults: (state, actions) => {
-            state.jogsResults = actions.payload
-        },
-        selectDataFrom: (state, actions) => {
-            state.dateFrom = actions.payload
-            state.jogsResults = filterFunc(actions.payload,state.dateFrom,state.dateTo,state.jogsResults)
-            state.allPages = allPages(state.jogsResults)
-        },
-        selectDataTo: (state, actions) => {
-            state.dateTo = actions.payload
-            state.jogsResults = filterFunc(actions.payload,state.dateFrom,state.dateTo,state.jogsResults)
-            state.allPages = allPages(state.jogsResults)
-        },
-    }
+    selectAllPages: (state, actions) => {
+      state.allPages = actions.payload;
+    },
+    selectJogsResults: (state, actions) => {
+      state.jogsResults = actions.payload;
+    },
+    selectDataFrom: (state, actions) => {
+      sport.filterDataHandler('dateFrom',state,actions)
+    },
+    selectDataTo: (state, actions) => {
+      sport.filterDataHandler('dateTo',state,actions)
+
+    },
+  },
 });
 
 export const jogs = (state) => state.jogs;
 
-export const {selectStartPage, selectAllPages,selectJogsResults,selectDataTo,selectDataFrom} = jogsFilterReducer.actions
+export const {
+  selectStartPage,
+  selectAllPages,
+  selectJogsResults,
+  selectDataTo,
+  selectDataFrom,
+} = jogsFilterReducer.actions;
 
 export default jogsFilterReducer.reducer;

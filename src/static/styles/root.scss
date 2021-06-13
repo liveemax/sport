@@ -1,24 +1,24 @@
 /* external files.
 ========================================================================== */
 @import "../../../node_modules/bootstrap/scss/bootstrap";
-@import 'external/_external.scss';
+@import "external/_external.scss";
 
 /* Base Variable file
 ========================================================================== */
 
-@import 'base/_variable.scss';
-@import 'base/reuse';
+@import "base/_variable.scss";
+@import "base/reuse";
 
 /* FRAMEWORK
 ========================================================================== */
 
-@import 'bootstrap/_updateTheme.scss';
+@import "bootstrap/_updateTheme.scss";
 
 /* MODULES - Re-usable site elements.
 ========================================================================== */
 
-@import 'module/_header.scss';
-@import 'module/_login.scss';
-@import 'module/_info.scss';
-@import 'module/_jogs.scss';
-@import 'module/_pagination.scss';
+@import "module/_header.scss";
+@import "module/_login.scss";
+@import "module/_info.scss";
+@import "module/_jogs.scss";
+@import "module/_pagination.scss";

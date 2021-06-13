@@ -8,9 +8,11 @@ $greyish: #b0abab;
 $white: #eaeaea;
 $appleGreen: #7ed321;
 
-
 $header-height-m: 77px;
 $header-height: 115px;
 $main-height-m: calc(100vh - #{$header-height-m});
 $main-height: calc(100vh - #{$header-height});
 $jogs-item-width: calc(100vw + 0.75rem);
+$jogs-item-height: 150px;
+$jogs-item-count: 2;
+$jogs-item-container-height: calc(#{$jogs-item-height} * #{$jogs-item-count});

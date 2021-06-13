@@ -1,22 +1,22 @@
-.info{
+.info {
   margin-top: 20px;
 }
-.infoHead{
+.infoHead {
   color: $appleGreen;
   margin-bottom: 5px;
   font-weight: bold;
 }
-.infoText{
+.infoText {
   margin-bottom: 15px;
 }
 @include media-breakpoint-up(lg) {
-  .info{
+  .info {
     margin-top: 85px;
   }
-  .infoHead{
+  .infoHead {
     margin-bottom: 15px;
   }
-  .infoText{
+  .infoText {
     margin-bottom: 30px;
   }
 }
