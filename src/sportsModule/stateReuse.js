@@ -2,6 +2,7 @@ import moment from "moment";
 
 //Constants
 export const url='https://jogtracker.herokuapp.com/api/v1'
+export const fakeToken='eb8cdf9e61521369da24ab55f0095f5da870881990d9b75daefef50333178daf'
 export const pageSize = 2
 export const dateFormat = 'DD.MM.YYYY'
 export const timeExample = '15'
@@ -11,10 +12,12 @@ export const startPage = 0
 export const tokenStorage='token'
 export const jogStorage='jogs'
 export const isValid=(payload)=>moment(payload, dateFormat, true).isValid()
-export const localBuffer = !!localStorage.getItem(jogStorage) ? JSON.parse(localStorage.getItem(jogStorage)) : []
 
 
 //Func
+
+export const localBuffer =()=>!!localStorage.getItem(jogStorage) ? JSON.parse(localStorage.getItem(jogStorage)) : []
+
 export const authHeader=(token)=>{
     return {
         "Accept":'application/json',
@@ -33,12 +36,14 @@ export const filterFunc=(payload,dateFrom,dateTo,jogsResults)=>{
         dateFrom='00.00.0000'
     if(!dateTo)
         dateTo=moment(Date.now()).format(dateFormat)
+    console.log(dateFrom)
+    console.log(dateTo)
     let jogsBuffer=[]
     if(isValid(payload))
     {
         let dateFromNumber=moment(dateFrom,dateFormat).unix();
         let dateToNumber=moment(dateTo,dateFormat).unix();
-        localBuffer.forEach((el)=>{
+        localBuffer().forEach((el)=>{
             if(el.date>=dateFromNumber&&el.date<=dateToNumber)
                 jogsBuffer.push(el)
         })

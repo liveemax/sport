@@ -5,7 +5,7 @@ import {allPages, filterFunc, localBuffer, pageSize, startPage} from "../../spor
 const jogsFilterReducer = createSlice({
     name: 'jogs',
     initialState: {
-        jogsResults: localBuffer,
+        jogsResults: localBuffer(),
         startPage,
         pageSize,
         allPages:allPages(localBuffer),
